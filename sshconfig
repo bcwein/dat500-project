@@ -1,0 +1,22 @@
+Host Cluster-Master
+    HostName *floating-ip-master*
+    User ubuntu
+    IdentityFile "*path-to-your-own-private-key*"
+
+Host Cluster-Slave1
+    HostName *slave1-ip*
+    User ubuntu
+    IdentityFile "*path-to-master-private-key*"
+    ProxyJump Cluster-Master
+
+Host Cluster-Slave2
+    User ubuntu
+    HostName *slave1-ip*
+    IdentityFile "*path-to-master-private-key*"
+    ProxyJump Cluster-Master
+
+Host Cluster-Slave3
+    User ubuntu
+    HostName *slave1-ip*
+    IdentityFile "*path-to-master-private-key*"
+    ProxyJump Cluster-Master
