@@ -9,9 +9,9 @@ sudo chmod 600 ~/.ssh/id_rsa
 sudo chmod 600 ~/.ssh/id_rsa.pub
 
 # Copy hadoop files
-yes | scp hadoop-3.2.1.tar.gz hadoop-slave1:/home/ubuntu/
-yes | scp hadoop-3.2.1.tar.gz hadoop-slave2:/home/ubuntu/
-yes | scp hadoop-3.2.1.tar.gz hadoop-slave3:/home/ubuntu/
+scp -o "StrictHostKeyChecking no" hadoop-3.2.1.tar.gz hadoop-slave1:/home/ubuntu/
+scp -o "StrictHostKeyChecking no" hadoop-3.2.1.tar.gz hadoop-slave2:/home/ubuntu/
+scp -o "StrictHostKeyChecking no" hadoop-3.2.1.tar.gz hadoop-slave3:/home/ubuntu/
 
 # Run on slaves
 ssh -o "StrictHostKeyChecking no" ubuntu@hadoop-slave1 < slave-setup.sh
