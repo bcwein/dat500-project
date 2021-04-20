@@ -28,3 +28,6 @@ scp configs/yarn-site.xml hadoop-slave3:/usr/local/hadoop/etc/hadoop/yarn-site.x
 
 # Start yarn on master
 sudo ./master-setup-step3.sh
+
+# Install anaconda
+sudo ./master-setup-step4.sh
